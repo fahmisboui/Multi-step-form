@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root{
+    /*Primary colors*/
+    --color-Marine-blue: hsl(213, 96%, 18%);
+    --color-Purplish-blue: hsl(243, 100%, 62%);
+    --color-Pastel-blue: hsl(228, 100%, 84%);
+    --color-Light-blue: hsl(206, 94%, 87%);
+    --color-Strawberry-red: hsl(354, 84%, 57%);
+
+    /*Neutral*/
+    --color-Cool-gray: hsl(231, 11%, 63%);
+    --color-Light-gray: hsl(229, 24%, 87%);
+    --color-Magnolia: hsl(217, 100%, 97%);
+    --color-Alabaster: hsl(231, 100%, 99%);
+    --color-White: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+body{
+    background-color: var(--color-Magnolia);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/*sidebar start*/
+
+.sidebar {
+    position: absolute;
+    height: 25vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: url(./assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom 1em right;
+    padding-top: 2.5em;
+    gap: 1em;
+    z-index: -1;
+}
+
+li{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+.sidebar__step{
+    display: block;
+    height: 35px;
+    width: 35px;
+    border: 1px solid var(--color-Light-gray);
+    border-radius: 50%;
+    color: var(--color-Light-gray);
+    background: var(--color-Purplish-blue);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div > h6 {
+    display: none;
+}
+
+.sidebar__step.activeStep {
+    color: var(--color-Marine-blue);
+    border: 1px solid var(--color-Light-blue);
+    background: var(--color-Light-blue);
+}
+/*sidebar end*/
+
+/*step start*/
+.step{
+    width: 90%;
+    height: fit-content;
+    padding: 1.5rem ;
+    background-color: var(--color-White);
+    border: transparent;
+    border-radius: 10px;
+    margin: 6rem auto;
+}
+
+.step-title{
+    color: var(--color-Marine-blue);
+    font-size: 2em;
+    font-weight:900;
+    margin-block: 1rem;
+}
+
+.step-p{
+    max-width: 30ch;
+    line-height: 1.5;
+    color: var(--color-Cool-gray);
+    margin-bottom: 1.5rem;
+} 
+
+input:hover{
+cursor: pointer;
+}
+/*step end*/
+
+/*step-1 start*/
+.form1 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    font-weight: 500;
+  }
+
+
+.form1 label{
+    position: relative;
+}
+
+.form1 > label > span:first-of-type {
+    display: block;
+    color: var(--color-Marine-blue);
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+.form1 input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--color-Light-gray);
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    padding-left: 15px;
+}
+
+.form1 input::placeholder {
+    color: var(--color-Cool-gray);
+    font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+.form1 label > input:is(:active, :focus, :focus-visible) {
+    outline: 1px solid var(--color-Purplish-blue);
+  }
+
+.form1 label > .required {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--color-Strawberry-red);
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    display: none;
+}
+
+.form1 input[data-error='true'] {
+    outline: 1px solid var(--color-Strawberry-red);
+}
+
+.form1 label:has(input[data-error='true']) > .required {
+    display: inline-block;
+}
+/*step-1 ends*/
+
+/*step-2 start*/
+.plans input{
+display: none;
+}
+.plans{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label:has(input[type="radio"]:checked){
+    border-color: var(--color-Purplish-blue);
+    background-color: var(--color-Alabaster);
+}
+
+.plans label{
+    border: 1px solid var(--color-Light-gray);
+    border-radius: 8px;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    flex: 1;
+}
+
+.plans label:hover{
+    border-color:var(--color-Purplish-blue);
+}
+
+.plan-decoration{
+    display:flex;
+    gap: 1rem;
+}
+
+.plan-decoration img{
+    width: 40px;
+}
+
+.plan-decoration > span{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.text-mr-bl{
+    color: var(--color-Marine-blue);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.text-cl-gr{
+    color: var(--color-Cool-gray);
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.plan-decoration .free-months{
+    color: var(--color-Marine-blue);
+}
+
+
+.plan-duration-container {
+    min-height: 6em;
+  }
+  
+  .plan-duration {
+    display: flex;
+    position: relative;
+    gap: 1.5em;
+    font-weight: bold;
+    color: var(--color-Cool-gray);
+    justify-content: center;
+    font-size: large;
+    background-color: var(--color-Magnolia);
+    padding: 0.7em 1em 0.7em 1em;
+    margin-top: 1.5em;
+  }
+  
+  .plan-duration:has(button[data-selected='monthly']) > .duration-label-monthly {
+    color: var(--color-Marine-blue);
+  }
+  
+  .plan-duration:has(button[data-selected='yearly']) > .duration-label-yearly {
+    color: var(--color-Marine-blue);
+  }
+  
+  .plan__name {
+    color: var(--color-Marine-blue);
+    font-weight: 500;
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+  
+  .plan__price {
+    display: block;
+    color: var(--color-Cool-gray);
+    font-weight: 500;
+    font-size: 1.3em;
+  }
+  
+  .plan__months-free {
+    display: block;
+    margin-top: 0.2em;
+    font-size: 500;
+    color: var(--color-Marine-blue);
+  }
+  
+  .duration-switch-btn {
+    height: 1.5em;
+    width: 2.8em;
+    background: var(--color-Marine-blue);
+    border: none;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .knob {
+    display: block;
+    position: absolute;
+    height: 0.9em;
+    width: 0.9em;
+    border-radius: 999px;
+    background: var(--color-Alabaster);
+    transform: translateX(3px);
+    transition: transform 0.3s;
+  }
+  
+  .duration-switch-btn[data-selected='yearly'] > .knob {
+    transform: translateX(calc(100% + 10px));}
+
+
+/*step-2 ends*/
+
+/*step-3 start*/
+.checkbox-plans{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-plans input[type="checkbox"]{
+    cursor: pointer;
+}
+
+.checkbox-plans label:has(input:checked){
+    outline: 1px solid var(--color-Purplish-blue);
+    background-color: var(--color-Alabaster);
+
+}
+
+.checkbox-plans label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-Light-gray);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}
+
+.checkbox-plans label:is(:hover, :focus){
+    border-color: var(--color-Purplish-blue) ;
+}
+
+.checkbox-plans label > div{
+    display: flex;
+    gap: 1rem;
+}
+
+.plan-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.text-cl-purp{
+    color: var(--color-Purplish-blue);
+}
+/*step-3 end*/
+
+/*step-4 start*/
+.price-collation {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0 1.5em 0;
+  }
+  
+  .selected {
+    background-color: var(--color-Magnolia);
+    border-radius: 0.5em;
+    padding: 1.2em;
+    margin: 1em 0 2em 0;
+  }
+  
+  .selected__text {
+    color: var(--color-Marine-blue);
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+  
+  #change-plan {
+    text-decoration: underline;
+    color: var(--color-Cool-gray);
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  #change-plan:hover {
+    color: var(--color-Purplish-blue);
+  }
+  
+  .selected_plan_cost {
+    color: var(--color-Marine-blue);
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+  
+  .top,
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .top {
+    padding-bottom: 0.5em;
+  }
+  
+  .bottom {
+    border-top: 1px solid var(--color-Light-gray);
+    padding-top: 0.5em;
+  }
+  
+  .selected_add-ons {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .selected_add-on {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .selected_add-on:not(:first-of-type) {
+    margin-top: 0.5em;
+  }
+  
+  .add-on-name {
+    color: var(--color-Cool-gray);
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+  
+  .add-on-cost {
+    color: var(--color-Marine-blue);
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2em;
+  }
+  
+  .total__text {
+    color: var(--color-Cool-gray);
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  
+  .total-cost {
+    color: var(--color-Purplish-blue);
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+  
+  #step4:not(.hidden) ~ .navigation .next:hover {
+    background: var(--color-Purplish-blue);
+  }
+
+#step-4 button[type="submit"]:hover{
+    background-color: var(--color-Purplish-blue);
+}
+
+/* step-4 end*/
+
+/*step-5 start*/
+#step5 {
+    padding-inline: 4em;
+    padding-block: 6em;
+    flex-direction: column;
+    place-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.thank-you {
+    font-size: 2em;
+    padding: 1.2em 0 0.1em 0;
+    color: var(--color-Marine-blue);
+    margin-bottom: 1rem;
+}
+
+.thank-you + p {
+    font-weight: 500;
+    color: var(--color-Cool-gray);
+}
+
+
+/*step-5 end*/
+
+/*bottom navigation */
+.navigation {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--color-Alabaster);
+    padding: 1em;
+  }
+  
+  .back,
+  .next {
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.6em 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .back {
+    float: left;
+    color: var(--color-Cool-gray);
+    background: transparent;
+  }
+  
+  .back:hover {
+    color: var(--color-Marine-blue);
+  }
+  
+  .next {
+    float: right;
+    background: var(--color-Marine-blue);
+    color: var(--color-Light-blue);
+  }
+
+/*footer start*/
+footer { 
+    margin-top: 1.5rem;
+    font-size: 11px; 
+    text-align: center;
+    display: none;
+}
+
+footer a {
+    color: hsl(228, 45%, 44%); }
+/*footer ends*/
+
+.hidden {
+    display: none !important;
+  }

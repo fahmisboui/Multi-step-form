@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <link rel="stylesheet" href="style-Mobile.css">
+  <link rel="stylesheet" href="style-Desktop.css">
+  <script src="js.js" defer></script>
+</head>
+<body class="hidden">
+    <main>
+      <aside class="sidebar">
+        <li>
+          <span class="sidebar__step activeStep">1</span>
+          <div>
+          <h6>Step 1</h6>
+          <h6>Your info</h6>
+          </div>
+        </li>
+        <li>
+          <span class="sidebar__step">2</span>
+          <div>
+          <h6>Step 2</h6>
+          <h6>Select plan</h6>
+          </div>
+        </li>
+        <li>
+          <span class="sidebar__step">3</span>
+          <div>
+          <h6>Step 3</h6>
+          <h6>Add-ons</h6>
+          </div>
+        </li>
+        <li>
+          <span class="sidebar__step">4</span>
+          <div>
+          <h6>Step 4</h6>
+          <h6>Summary</h6>
+          </div>
+        </li>
+      </aside>
+      
+      <section id="step1" class="step">
+        <h1 class="step-title">Personal info</h1>
+        <p class="step-p">Please provide your name, email address, and phone number.</p>
+        <form  name="form1" method="post" autocomplete="off" class="form1">
+          <label for="name">
+            <span>Name</span>
+            <span class="required">This field is required</span>
+            <input type="text" name="formInput" id="name" placeholder="e.g. Stephen King" required data-error="false"/>
+          </label>
+          <label for="email">
+            <span>Email Address</span>
+            <span class="required">This field is required</span>
+            <input type="email" name="formInput" id="email" placeholder="e.g. stephenking@lorem.com" required data-error="false"/>
+          </label>
+          <label for="phone">
+            <span>Phone Number</span>
+            <span class="required">This field is required</span>
+            <input type="number" name="formInput" id="phone" placeholder="e.g. +1 234 567 890" required data-error="false" />
+          </label>
+        </form>
+      </section>
+
+      <section id="step2" class="step">
+      <h1 class="step-title">Select your plan</h1>
+      <p class="step-p">You have the option of monthly or yearly billing.</p>
+      <form name="form2" class="forms">
+        <div class="plans">
+        <label for="arcade">
+          <input type="radio" name="step2" id="arcade" value="Arcade" checked>
+          <div class="plan-decoration">
+            <img src="assets/images/icon-arcade.svg" aria-hidden="true">
+            <span>
+            <span class="text-mr-bl">Arcade</span>
+            <span class="text-cl-gr monthly">$9/mo</span>
+            <span class="text-cl-gr yearly hiddenn">$90/yr</span>
+            <span class="free-months yearly hiddenn">2 months free</span>
+          </span>
+          </div>
+        </label>
+        <label for="advanced">
+          <input type="radio" name="step2" id="advanced" value="Advanced">
+          <div class="plan-decoration">
+            <img src="assets/images/icon-advanced.svg" aria-hidden="true">
+            <span>
+            <span class="text-mr-bl">Advanced</span>
+            <span class="text-cl-gr monthly">$12/mo</span>
+            <span class="text-cl-gr yearly hiddenn">$120/yr</span>
+            <span class="free-months yearly hiddenn">2 months free</span>
+            </span>
+          </div>
+        </label>
+        <label for="pro">
+          <input type="radio" name="step2" id="pro" value="Pro">
+          <div class="plan-decoration">
+            <img src="assets/images/icon-pro.svg" aria-hidden="true">
+            <span>
+              <span class="text-mr-bl">Pro</span>
+              <span class="text-cl-gr monthly">$15/mo</span>
+              <span class="text-cl-gr yearly hiddenn">$150/yr</span>
+              <span class="free-months yearly hiddenn">2 months free</span>
+            </span>
+          </div>
+        </label>
+        </div>
+        <div class="plan-duration-container">
+          <div class="plan-duration">
+            <p class="duration-label duration-label-monthly">Monthly</p>
+            <button type="button"
+              id="durationSwitchBtn"
+              class="duration-switch-btn"
+              data-selected="monthly"
+              onclick="DurationSwitch()">
+              <span class="knob" id="knob"></span>
+            </button>
+            <p class="duration-label duration-label-yearly">Yearly</p>
+          </div>
+        </div>
+
+      </form>
+      </section>
+        
+      <section id="step3"  class="step">
+        <h1 class="step-title">Pick add-ons</h1>
+      <p class="step-p">Add-ons help enhance your gaming experience.</p>
+        <form name="form3" class="forms">
+          <div class="checkbox-plans">
+            <label for="onlineService">
+              <div>
+                <input type="checkbox" name="services" id="onlineService">
+              <div class="plan-description">
+                <span class="text-mr-bl">Online service</span>
+                <span class="text-cl-gr">Access to multiplayer games</span>
+              </div>
+              </div>
+              <span class="monthly text-cl-purp">+$1/mo</span>
+              <span class="yearly hiddenn text-cl-purp">+$10/yr</span>
+            </label>
+            <label for="largerStorage">
+              <div>
+                <input type="checkbox" name="services" id="largerStorage">
+              <div class="plan-description">
+                <span class="text-mr-bl">Larger storage</span>
+                <span class="text-cl-gr">Extra 1TB of cloud save</span>
+              </div>
+              </div>
+              <span class="monthly text-cl-purp">+$2/mo</span>
+              <span class="yearly hiddenn text-cl-purp">+$20/yr</span>
+            </label>
+            <label for="customizableProfile">
+              <div>
+                <input type="checkbox" name="services" id="customizableProfile">
+              <div class="plan-description">
+                <span class="text-mr-bl">Customizable profile</span>
+                <span class="text-cl-gr">Custom theme on your profile</span>
+              </div>
+              </div>
+              <span class="monthly text-cl-purp">+$2/mo</span>
+              <span class="yearly hiddenn text-cl-purp">+$20/yr</span>
+            </label>
+          </div>
+        </form>
+      </section>
+
+      <section id="step4" class="step">
+          <h1 class="step-title">Finishing up</h1>
+          <p class="step-p">Double-check everything looks OK before confirming.</p>
+        <div class="price-collation">
+          <div class="selected">
+            <div class="top">
+              <div class="selected__text">
+                <span class="selected_plan" id="selectedPlan">Arcade </span>
+                <span>(</span>
+                <span class="selected_plan_duration" id="selectedPlanDuration"
+                  >Monthly</span>
+                <span>)</span>
+                <br/>
+                <span id="change-plan" onclick="changeCurrentStep(2)">Change</span>
+              </div>
+              <p class="selected_plan_cost" id="selectedPlanCost">$9/mo</p>
+            </div>
+            <div class="bottom" id="selectedAddonsContainer">
+              <ul class="selected_add-ons" id="selectedAddOnsList"></ul>
+            </div>
+          </div>
+          <div class="total">
+            <p class="total__text">
+              Total (per <span id="selectedDuration">month</span>)
+            </p>
+            <p class="total-cost" id="totalCost">+$9/mo</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="step5" class="step">
+        <img src="assets/images/icon-thank-you.svg" alt="" />
+        <h1 class="thank-you">Thank you!</h1>
+        <p>
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          at support@loremgaming.com.
+        </p>
+      </section>
+
+      <section class="navigation" id="navigation">
+        <button onclick="changeCurrentStep(currentStep - 1)" class="back" id="back" >
+          Go Back
+        </button>
+        <button onclick="changeCurrentStep(currentStep + 1)" class="next" id="next">
+          Next Step
+        </button>
+      </section>
+    </main>
+
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/fahmisboui">Fahmi Sboui</a>.
+  </footer>
+
+  
+</body>
+</html>

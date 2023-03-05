@@ -1,0 +1,90 @@
+@media (min-width:800px){
+
+body{
+    padding-inline:1rem ;
+}
+
+main{
+    flex-direction: row;
+    max-width: 55em;
+    height: 36em;
+    margin: 2rem auto;
+    background-color: var(--color-White);
+    border-radius: 15px;
+    position: relative;
+}
+
+picture img{
+    width: fit-content;
+    height: 100%;
+}
+.sidebar {
+    position: relative;
+    background: url(./assets/images/bg-sidebar-desktop.svg);
+    height: auto;
+    width: fit-content;
+    min-width: 16em;
+    margin: 1rem;
+    padding-inline: 2em;
+    padding-block: 2em;
+    z-index: initial;
+    border-radius: 10px;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.sidebar__step {
+    position: relative;
+    padding: 0.5em;
+
+}
+
+li :is(h6) {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+li :is(h6:first-of-type) {
+    color: var(--color-Cool-gray);
+}
+
+li :is(h6:nth-of-type(2)) {
+    color: var(--color-White);
+}
+
+.step{
+    padding: 2rem 4.5rem;
+    margin: 0;
+    max-width: 100%;
+}
+
+.plans{
+    flex-direction: row;
+}
+
+.plan-decoration{
+    flex-direction: column;
+}
+.plan-decoration img{
+    margin-bottom: 2rem;
+}
+
+
+/* bottom navigation */
+.navigation {
+    position: absolute;
+    align-self: flex-end;
+    margin: 0 0.5em 0 -30em;
+    left: 810px;
+    right: 2.8em;
+    bottom: 20px;
+    background: none;
+}
+
+
+footer{
+    display: block;
+}
+}
